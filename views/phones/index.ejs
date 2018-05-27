@@ -1,0 +1,46 @@
+  <% include ../partials/header %>
+  
+  
+  <h4><%= currentUser %></h4>
+  <div class="container">
+  <header class="jumbotron">
+    <div class="container">
+    <h1>Welcome to smart World</h1>
+    <p>View and add content to our world</p>
+   
+    <p>
+       <a class="btn btn-primary btn-lg" href="/phones/new">Add new phone to the site</a>
+    </p>
+    </div>
+  </header>
+  <form action="/s/phones" method="POST">
+  <input type="text" name="search" placeholder="Search"></input>
+  <input type="submit"></input>
+  </form>
+  <div class="row text-center" style="display:flex; flex-wrap:wrap;">
+    
+    <% phones.forEach(function(phone){ %>
+      <div class="col-md-3 col-sm-6">
+        <div class="thumbnail">
+        <img src="<%= phone.image %>">
+        </div>
+        <div class="caption">
+           <h4><%= phone.name %></h4> 
+        
+        <p>
+          <a href="/phones/<%=phone._id%>" class="btn btn-primary">More info</a>
+        </p>
+         </div>
+         
+      </div>
+     
+  
+  <%});%>
+  </div>
+  
+  
+  
+  
+  
+  </div>
+  <% include ../partials/footer %>

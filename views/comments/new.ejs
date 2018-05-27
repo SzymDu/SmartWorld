@@ -1,0 +1,21 @@
+<% include ../partials/header %>
+
+<h1 style="text-align:center;">Add new comment too <%= phone.name %> </h1>
+<div class="container">
+    <div class="row">
+        <div style="width:30%; margin:50px auto;">
+<form action="/phones/<%=phone._id %>/comments" method="POST">
+    <div class="form-group">
+         <input type="text" class="form-control" name="comment[text]" placeholder="Text"></input>
+    </div>
+    
+  
+     <div class="form-group">
+    <input class="btn btn-lg btn-primary btn-block" type="submit"></input>
+    </div>
+</form>  
+</div>
+</div>
+<a href="/phones">back</a>
+</div>
+<% include ../partials/footer %>
